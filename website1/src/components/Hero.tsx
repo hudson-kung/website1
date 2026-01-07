@@ -40,15 +40,6 @@ const Hero = () => {
               </svg>
               Call Now: 111-111-1111
             </a>
-            <button
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold py-5 px-10 rounded-full transition-all duration-300 text-xl"
-            >
-              View Packages
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
           </div>
 
           {/* Trust Indicators */}

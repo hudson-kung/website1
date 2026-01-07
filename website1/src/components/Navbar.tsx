@@ -25,12 +25,35 @@ const Navbar = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 font-medium transition">Home</button>
-          <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 font-medium transition">Services</button>
-          <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 font-medium transition">About</button>
-          <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 font-medium transition">Contact</button>
-          <a href="tel:1111111111" className="btn-primary text-sm py-2 px-6">
+        <div className="hidden md:flex items-center space-x-6">
+          <button 
+            onClick={() => scrollToSection('home')} 
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 hover:scale-105 transform"
+          >
+            Home
+          </button>
+          <button 
+            onClick={() => scrollToSection('services')} 
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 hover:scale-105 transform"
+          >
+            Services
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')} 
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 hover:scale-105 transform"
+          >
+            About
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 hover:scale-105 transform"
+          >
+            Contact
+          </button>
+          <a 
+            href="tel:1111111111" 
+            className="btn-primary text-sm py-2 px-6 ml-4"
+          >
             Call Now
           </a>
         </div>
@@ -59,11 +82,31 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t px-4 py-4 space-y-3">
-          <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 font-medium">Home</button>
-          <button onClick={() => scrollToSection('services')} className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 font-medium">Services</button>
-          <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 font-medium">About</button>
-          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</button>
+        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2">
+          <button 
+            onClick={() => scrollToSection('home')} 
+            className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium rounded-lg transition-all duration-200"
+          >
+            Home
+          </button>
+          <button 
+            onClick={() => scrollToSection('services')} 
+            className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium rounded-lg transition-all duration-200"
+          >
+            Services
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')} 
+            className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium rounded-lg transition-all duration-200"
+          >
+            About
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium rounded-lg transition-all duration-200"
+          >
+            Contact
+          </button>
         </div>
       )}
     </nav>
