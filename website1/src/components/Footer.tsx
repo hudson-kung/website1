@@ -1,70 +1,78 @@
-import { Link } from 'react-router-dom';
-
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-white text-xl font-bold mb-4">Nadov</h3>
-            <p className="mb-4">Building amazing digital experiences with cutting-edge technology.</p>
-          </div>
-          
-          <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Services</Link></li>
-              <li><Link to="/portfolio" className="hover:text-white transition">Portfolio</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2">
-              <li><Link to="/services/web-development" className="hover:text-white transition">Web Development</Link></li>
-              <li><Link to="/services/mobile-apps" className="hover:text-white transition">Mobile Apps</Link></li>
-              <li><Link to="/services/ui-ux" className="hover:text-white transition">UI/UX Design</Link></li>
-              <li><Link to="/services/consulting" className="hover:text-white transition">Consulting</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Contact</h4>
-            <address className="not-italic">
-              <p>123 Business Street</p>
-              <p>City, State 12345</p>
-              <p className="mt-2">Email: info@nadov.com</p>
-              <p>Phone: (123) 456-7890</p>
-            </address>
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="bg-blue-600 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Ready to Get Your Car Looking Brand New?
+          </h3>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="tel:1111111111"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all duration-300"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Call 111-111-1111
+            </a>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-all duration-300"
+            >
+              Get a Quote
+            </button>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>© {currentYear} Nadov. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition">
-              <span className="sr-only">Twitter</span>
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-              </svg>
-            </a>
-            <a href="#" className="hover:text-white transition">
-              <span className="sr-only">GitHub</span>
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-              </svg>
-            </a>
-            <a href="#" className="hover:text-white transition">
-              <span className="sr-only">LinkedIn</span>
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </a>
+      </div>
+
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="col-span-1 md:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">FC</span>
+              </div>
+              <div>
+                <span className="text-xl font-bold text-white">Fresh & Clean</span>
+                <span className="text-gray-400 text-sm ml-1">Car Wash</span>
+              </div>
+            </div>
+            <p className="text-gray-400 mb-6 max-w-md">
+              The Inland Empire's premier car wash destination. We're committed to making 
+              your car shine while providing fast, friendly, and eco-friendly service.
+            </p>
           </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-3">
+              <li><button onClick={() => scrollToSection('home')} className="text-gray-400 hover:text-white transition">Home</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition">Services</button></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition">About Us</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition">Contact</button></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4">Contact Info</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li><a href="tel:1111111111" className="hover:text-white transition">111-111-1111</a></li>
+              <li>123 Main Street<br />Riverside, CA 92501</li>
+              <li>Mon-Sat: 7am-8pm<br />Sun: 8am-6pm</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+          <p>&copy; {new Date().getFullYear()} Fresh & Clean Car Wash. All rights reserved.</p>
         </div>
       </div>
     </footer>
