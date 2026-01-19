@@ -50,7 +50,7 @@ const Contact = () => {
               <h3 className="font-bold text-lg mb-2">Location</h3>
               <p className="text-blue-100">
                 123 Main Street<br />
-                Riverside, CA 92501
+                Chino, CA 91710
               </p>
             </div>
 

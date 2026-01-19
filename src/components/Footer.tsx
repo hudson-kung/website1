@@ -65,7 +65,7 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-3 text-gray-400">
               <li><a href="tel:9092931038" className="hover:text-white transition">909-293-1038</a></li>
-              <li>123 Main Street<br />Riverside, CA 92501</li>
+              <li>123 Main Street<br />Chino, CA 91710</li>
               <li>Mon-Sat: 7am-8pm<br />Sun: 8am-6pm</li>
             </ul>
           </div>
